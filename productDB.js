@@ -5,7 +5,7 @@ const ProductJson = require("./products.json");
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGODB_URL);
+    await connectDB(process.env.MONGODB_URL.toString());
     await Product.create(ProductJson);
     console.log("Success");
   } catch (error) {
